@@ -1,0 +1,57 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  api:
+    loadRoadmap:
+      description: "Should load roadmap from yml"
+      testee: "$loadRoadmap('./spec/api.yml')"
+      condition: "Should have property"
+      value: "tests"
+      require: [ "loadRoadmap" ]
+    generateTests:
+      description: "Should generate an array of tests from yml"
+      testee: "$generateRoadmapTests(loadRoadmap('./spec/api.yml'))"
+      condition: "Should be array"
+      value: 
+      require: [ "generateRoadmapTests" ]
+    generateMarkdownRoadmap:
+      description: "Should generate markdown describing tests from yml"
+      testee: "$generateMarkdownRoadmap('./spec/api.yml')"
+      condition: "Should be string"
+      value: ""
+      require: [ "generateMarkdownRoadmap" ]
+    writeRoadmapTests:
+      description: "Should generate an array of tests from yml and then write to a file"
+      testee: "$writeRoadmapTests('./spec/api.yml','./spec/api.js')"
+      condition: "should not fail"
+      value: ""
+      require: [ "writeRoadmapTests" ]
+    writeMarkdownRoadmap:
+      description: "Should generate markdown describing tests form yml and then write to a file"
+      testee: "$writeMarkdownRoadmap('./spec/api.yml','./spec/api.md')"
+      condition: "should not fail"
+      value: ""
+      require: [ "writeMarkdownRoadmap" ]

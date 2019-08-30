@@ -6,8 +6,9 @@ const writeMarkdown 		= require('./lib/writeMarkdownRoadmap.js')
 const loadRoadmap				=	require('./lib/loadRoadmap.js')
 
 module.exports = { generateTests, generateMarkdown, writeTests, writeMarkdown }
+/*
 
-loadRoadmap('./spec/init.yaml')
+loadRoadmap('./spec/api.yml')
 	.then( roadmap => {
 		console.log(roadmap)
 		return roadmap
@@ -18,7 +19,7 @@ loadRoadmap('./spec/init.yaml')
 		return tests
 	})
 
-writeTests('./spec/init.yaml','./spec/test.js')
+writeTests('./spec/api.yml','./spec/api.js')
 	.then( tests => {
-		console.log(tests)
 	})
+	*/

@@ -40,7 +40,7 @@ describe('Should generate markdown describing tests from yml', function() {
 const writeRoadmapTests = require('../lib/writeRoadmapTests.js')
 describe('Should generate an array of tests from yml and then write to a file', function() {
   it('Should not fail', async function() {
-		let testee = await writeRoadmapTests('./spec/api.yml','./spec/api.js')
+		let testee = await writeRoadmapTests('./spec/api.yml','./tests.js')
 		testee.should.not.fail
 	})
 })
@@ -49,7 +49,7 @@ describe('Should generate an array of tests from yml and then write to a file', 
 const writeMarkdownRoadmap = require('../lib/writeMarkdownRoadmap.js')
 describe('Should generate markdown describing tests form yml and then write to a file', function() {
   it('Should not fail', async function() {
-		let testee = await writeMarkdownRoadmap('./spec/api.yml','./spec/api.md')
+		let testee = await writeMarkdownRoadmap()
 		testee.should.not.fail
 	})
 })
