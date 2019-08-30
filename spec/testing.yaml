@@ -1,0 +1,59 @@
+#git:
+#  gitRepoExists
+#  gitInit:
+#    type: 
+#  gitCreateRepo
+#  gitAdd
+#  gitCommit
+##################
+#  Options
+##################
+
+#------- test types ---------
+#
+#  should be / expect to be
+#
+#  a <type>
+#  equal <value>
+#  have_length_of <integer>
+#  have_property <string>
+#  instance_of <>
+#
+
+default_test_path: "lib"
+
+tests:
+
+  Testing:
+    FullTestCoverage:
+      description: "Test coverage over full API"
+      testee: ""
+      condition: ""
+      value: ""
+    CommandLine:
+      TestCommand:
+        description: "Implement `sempub test`"
+        testee: ""
+        condition: ""
+        value: ""
+      TestSuiteFlag:
+        description: "Decide with a CLI flag which test suites to run."
+        testee: ""
+        condition: ""
+        value: ""
+    CreateTestsFromRoadmapYaml:
+      SingleFile:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      YamlIncludeReferences:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""
+      MultipleAssertionFrameworks:
+        description: ""
+        testee: ""
+        condition: ""
+        value: ""

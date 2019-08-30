@@ -1,0 +1,42 @@
+- [ ] Distribution
+  - [x] Implement Semantic Releases
+    - [x] Patch
+    - [x] Minor
+    - [x] Major
+    - [ ] Pre-Patch
+    - [ ] Pre-Minor
+    - [ ] Pre-Major
+  - [ ] Flexible adapting CI/CD chain
+  - [ ] Git push to multiple urls
+  - [ ] Use alternate package manager
+  - [ ] Implement Deployment Cycle
+    - [ ] Development
+    - [ ] Testing
+    - [ ] Staging
+    - [ ] Production
+- [ ] Hints
+  - [x] CLI markdown prompts
+  - [ ] Toggle hints with cli flag 
+  - [ ] Toggle hints with init config
+  - [ ] Make hints for every prompt
+    - [ ] Initialize
+    - [x] Git commit message
+    - [x] Release Notes
+    - [ ] Release Type
+    - [ ] Confirm Publication
+- [ ] Documentation & Analysis
+  - [x] Add release notes
+  - [x] Enable shortcode emojis in release notes
+  - [ ] Dependency Graph
+    - [x] With Graphviz
+    - [x] With viz.js fallback
+    - [ ] Automatically add graph to README.md
+    - [ ] Find an attractive `javascript` only alternative
+  - [ ] Linting
+  - [ ] Code Complexity
+- [ ] Streamline init
+  - [ ] git init
+  - [ ] npm init
+- [ ] Testing
+  - [ ] More Testing
+  - [ ] Mocha

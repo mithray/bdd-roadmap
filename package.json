@@ -1,0 +1,27 @@
+{
+  "name": "@mithray/bdd-roadmap",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+		"test": "mocha ./spec/*js",
+    "tap": "tap ./spec/*js"
+  },
+  "keywords": [],
+  "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "change-case": "^3.1.0",
+    "gitty": "^3.7.0",
+    "js-yaml": "^3.13.1",
+    "mochawesome": "^4.1.0",
+    "mocha": "^6.2.0",
+    "tap": "^14.6.1",
+    "should": "^13.2.3"
+  },
+  "devDependencies": {
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": "- [ ] Distribution   - [x] Implement Semantic Releases     - [x] Patch     - [x] Minor     - [x] Major     - [ ] Pre-Patch     - [ ] Pre-Minor     - [ ] Pre-Major   - [ ] Flexible adapting CI/CD chain   - [ ] Git push to multiple urls   - [ ] Use alternate package manager   - [ ] Implement Deployment Cycle     - [ ] Development     - [ ] Testing     - [ ] Staging     - [ ] Production - [ ] Hints   - [x] CLI markdown prompts   - [ ] Toggle hints with cli flag    - [ ] Toggle hints with init config   - [ ] Make hints for every prompt     - [ ] Initialize     - [x] Git commit message     - [x] Release Notes     - [ ] Release Type     - [ ] Confirm Publication - [ ] Documentation & Analysis   - [x] Add release notes   - [x] Enable shortcode emojis in release notes   - [ ] Dependency Graph     - [x] With Graphviz     - [x] With viz.js fallback     - [ ] Automatically add graph to README.md     - [ ] Find an attractive `javascript` only alternative   - [ ] Linting   - [ ] Code Complexity - [ ] Streamline init   - [ ] git init   - [ ] npm init - [ ] Testing   - [ ] More Testing   - [ ] Mocha"
+}
