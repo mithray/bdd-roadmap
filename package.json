@@ -1,9 +1,9 @@
 {
   "name": "@mithray/bdd-roadmap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
-		"test": "mocha ./spec/*js",
+    "test": "mocha ./spec/*js",
     "tap": "tap ./spec/*js"
   },
   "keywords": [],
@@ -18,8 +18,7 @@
     "tap": "^14.6.1",
     "should": "^13.2.3"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "directories": {
     "lib": "lib"
   }
