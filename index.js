@@ -19,7 +19,7 @@ loadRoadmap('./spec/api.yml')
 		return tests
 	})
 
+	*/
 writeTests('./spec/api.yml','./spec/api.js')
 	.then( tests => {
 	})
-	*/
