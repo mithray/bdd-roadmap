@@ -32,81 +32,96 @@ const md_arr = []
 
 
 
-const loadRoadmap = require('../lib/loadRoadmap.js')
+const loadTests = require('../lib/loadTests.js')
 describe('Should load roadmap from yml', function() {
+
 	afterEach(function(done){
 		let state		= this.currentTest.state
 		let name 		= this.test.fullTitle()
 		let md_line = toMdLine( name, state)
-		md_arr.push(md_line)
+		md_line = md_line.replace('"after each" hook','')
+		md_arr.push(md_line.trim())
 		done()
 	})
-  it('Should have property', async function() {
-		let testee = await loadRoadmap('./spec/api.yml')
-		testee.should.have.property
+	it('Should have property "api"', async function() {
+		let expression = await loadTests( {"inputFile":"./spec/api.yml"} )
+		expression.should.have.property("api")
 	})
+
 })
 
 
-const generateRoadmapTests = require('../lib/generateRoadmapTests.js')
+const generateTests = require('../lib/generateTests.js')
 describe('Should generate an array of tests from yml', function() {
+
 	afterEach(function(done){
 		let state		= this.currentTest.state
 		let name 		= this.test.fullTitle()
 		let md_line = toMdLine( name, state)
-		md_arr.push(md_line)
+		md_line = md_line.replace('"after each" hook','')
+		md_arr.push(md_line.trim())
 		done()
 	})
-  it('Should be array', async function() {
-		let testee = await generateRoadmapTests(loadRoadmap('./spec/api.yml'))
-		testee.should.be.array
+	it('Should be array', async function() {
+		let expression = await generateTests( {"inputFile":"./spec/api.yml"} )
+		expression.should.be.array
 	})
+
 })
 
 
-const generateMarkdownRoadmap = require('../lib/generateMarkdownRoadmap.js')
+const generateMarkdownChecklist = require('../lib/generateMarkdownChecklist.js')
 describe('Should generate markdown describing tests from yml', function() {
+
 	afterEach(function(done){
 		let state		= this.currentTest.state
 		let name 		= this.test.fullTitle()
 		let md_line = toMdLine( name, state)
-		md_arr.push(md_line)
+		md_line = md_line.replace('"after each" hook','')
+		md_arr.push(md_line.trim())
 		done()
 	})
-  it('Should be string', async function() {
-		let testee = await generateMarkdownRoadmap('./spec/api.yml')
-		testee.should.be.string
+	it('Should be string', async function() {
+		let expression = await generateMarkdownChecklist( {"inputFile":"./spec/api.yml"} )
+		expression.should.be.string
 	})
+
 })
 
 
-const writeRoadmapTests = require('../lib/writeRoadmapTests.js')
+const writeTests = require('../lib/writeTests.js')
 describe('Should generate an array of tests from yml and then write to a file', function() {
+
 	afterEach(function(done){
 		let state		= this.currentTest.state
 		let name 		= this.test.fullTitle()
 		let md_line = toMdLine( name, state)
-		md_arr.push(md_line)
+		md_line = md_line.replace('"after each" hook','')
+		md_arr.push(md_line.trim())
 		done()
 	})
-  it('Should not fail', async function() {
-		let testee = await writeRoadmapTests('./spec/api.yml','./spec/api.js')
-		testee.should.not.fail
+	it('Should not fail', async function() {
+		let expression = await writeTests( {"inputFile":"./spec/api.yml","outputFile":"./spec/api.spec.js"} )
+		expression.should.not.fail
 	})
+
 })
 
 
-const writeMarkdownRoadmap = require('../lib/writeMarkdownRoadmap.js')
+const writeMarkdownChecklist = require('../lib/writeMarkdownChecklist.js')
 describe('Should generate markdown describing tests form yml and then write to a file', function() {
+
 	afterEach(function(done){
 		let state		= this.currentTest.state
 		let name 		= this.test.fullTitle()
 		let md_line = toMdLine( name, state)
-		md_arr.push(md_line)
+		md_line = md_line.replace('"after each" hook','')
+		md_arr.push(md_line.trim())
 		done()
 	})
-  it('Should not fail', async function() {
-		let testee = await writeMarkdownRoadmap('./spec/api.yml','./spec/api.md')
-		testee.should.not.fail
+	it('Should not fail', async function() {
+		let expression = await writeMarkdownChecklist( {"inputFile":"./spec/api.yml","outputFile":"./spec/api.md"} )
+		expression.should.not.fail
 	})
+
 })

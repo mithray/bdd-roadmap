@@ -1,20 +1,24 @@
 {
-  "name": "@mithray/bdd-roadmap",
-  "version": "0.0.3",
-  "main": "index.js",
+  "name": "@mithray/bdd-testgen",
+  "version": "0.0.1",
+  "main": "./index.js",
   "scripts": {
-    "test": "mocha ./spec/*js",
-    "tap": "tap ./spec/*js"
+    "test": "mocha ./spec/*spec.js",
+    "tap": "tap ./spec/*spec.js"
   },
   "keywords": [],
   "author": "mithrayls <mithray@protonmail.com> (https://mithrayls.github.io/)",
   "license": "MIT",
   "dependencies": {
+    "@mithray/logger": "0.0.7",
     "change-case": "^3.1.0",
+    "commander": "^3.0.1",
     "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "merge-anything": "^2.4.1",
     "mocha": "^6.2.0",
-    "tap": "^14.6.1",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "tap": "^14.6.1"
   },
   "devDependencies": {},
   "directories": {

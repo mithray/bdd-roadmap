@@ -1,57 +1,99 @@
-#git:
-#  gitRepoExists
-#  gitInit:
-#    type: 
-#  gitCreateRepo
-#  gitAdd
-#  gitCommit
-##################
-#  Options
-##################
-
 #------- test types ---------
 #
-#  should be / expect to be
+#     http://shouldjs.github.io/
 #
-#  a <type>
-#  equal <value>
-#  have_length_of <integer>
-#  have_property <string>
-#  instance_of <>
+#     ##-- Exist --##
 #
+#     Should exist 'x'
+#     Should not exist 'x'
+#
+#
+#     ##-- Equality --##
+#
+#     Should be ok
+#     Should not be ok
+#     Should be false '<x>'
+#     Should not be false '<x>'
+#     Should be true
+#     Should not be true
+#     Should be eql 'x'
+#     Should be equal 'x'
+#     Should not be eql 'x'
+#     Should not be equal 'x'
+#     Should containEql
+#     Should notContainEql
+#     Should deepEqual
+#     Should notDeepEqual
+#
+#     ##-- Contain --##
+#
+#     Should have property 'x'
+#     Should have property 'x' which is a number
+#     Should contain deep '[ a, .. , z]'
+#     Should not contain deep '[ a, .. , z]'
+#     Should containDeepOrdered 'x'
+#     Should notContainDeepOrdered 'x'
+#     Should be equalOneOf 'x'
+#
+#
+#     ##-- Success --##
+#
+#     Should fail
+#     Should not fail
+#
+#     <x> Should start with 'y'
+#
+#     https://jsdoc.app/tags-param.html
+#
+---
 
-default_test_path: "lib"
+path_prefix: "lib"
 
-tests:
+api:
 
-  api:
-    loadRoadmap:
-      description: "Should load roadmap from yml"
-      testee: "$loadRoadmap('./spec/api.yml')"
-      condition: "Should have property"
-      value: "tests"
-      require: [ "loadRoadmap" ]
-    generateTests:
-      description: "Should generate an array of tests from yml"
-      testee: "$generateRoadmapTests(loadRoadmap('./spec/api.yml'))"
-      condition: "Should be array"
-      value: 
-      require: [ "generateRoadmapTests" ]
-    generateMarkdownRoadmap:
-      description: "Should generate markdown describing tests from yml"
-      testee: "$generateMarkdownRoadmap('./spec/api.yml')"
-      condition: "Should be string"
-      value: ""
-      require: [ "generateMarkdownRoadmap" ]
-    writeRoadmapTests:
-      description: "Should generate an array of tests from yml and then write to a file"
-      testee: "$writeRoadmapTests('./spec/api.yml','./spec/api.js')"
-      condition: "should not fail"
-      value: ""
-      require: [ "writeRoadmapTests" ]
-    writeMarkdownRoadmap:
-      description: "Should generate markdown describing tests form yml and then write to a file"
-      testee: "$writeMarkdownRoadmap('./spec/api.yml','./spec/api.md')"
-      condition: "should not fail"
-      value: ""
-      require: [ "writeMarkdownRoadmap" ]
+
+  loadTests:
+    description: 'Should load roadmap from yml'
+    function: 'loadTests'
+    parameter_desc: '{string} [inputFile="./spec/api.yml"]'
+    tests:
+    - parameters: { inputFile: "./spec/api.yml" }
+      condition: 'should have property "api"'
+
+
+
+
+  generateTests:
+    description: 'Should generate an array of tests from yml'
+    function: 'generateTests'
+    parameter_desc: '{string} [inputFile="./spec/api.yml"]'
+    tests:
+    - parameters: { inputFile: "./spec/api.yml" }
+      condition: 'should be array'
+
+  generateMarkdownChecklist:
+    description: 'Should generate markdown describing tests from yml'
+    function: 'generateMarkdownChecklist'
+    parameter_desc: '{string} [inputFile="./spec/api.yml"]'
+    tests:
+    - parameters: { inputFile: "./spec/api.yml" }
+      condition: 'should be string'
+
+
+
+
+  writeTests:
+    description: 'Should generate an array of tests from yml and then write to a file'
+    function: 'writeTests'
+    parameter_desc: [ '{string} [inputFile="./spec/api.yml"]', '{string} [outputFile="./spec/api.spec.js"]' ]
+    tests:
+    - parameters: { inputFile: './spec/api.yml', outputFile: './spec/api.spec.js' }
+      condition: 'should not fail'
+
+  writeMarkdownChecklist:
+    description: 'Should generate markdown describing tests form yml and then write to a file'
+    function: 'writeMarkdownChecklist'
+    parameter_desc: [ '{string} [inputFile="./spec/api.yml"]', '{string} [outputFile="./spec/api.md"]' ]
+    tests:
+    - parameters: { inputFile: './spec/api.yml', outputFile: './spec/api.md' }
+      condition: 'should not fail'
